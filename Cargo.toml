@@ -1,0 +1,17 @@
+[package]
+name = "nsv"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tiny_http = "0.12"
+percent-encoding = "2"
+chrono = { version = "0.4"}
+ctrlc = "3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
